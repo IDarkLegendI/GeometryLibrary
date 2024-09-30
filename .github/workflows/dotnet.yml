@@ -25,10 +25,10 @@ jobs:
           dotnet-version: '8.x' 
       
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore GeometryLibrary.sln
       
-      - name: Build project
-        run: dotnet build --no-restore
-      
+      - name: Build solution
+        run: dotnet build --no-restore GeometryLibrary.sln
+        
       - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build --verbosity normal GeometryLibrary.sln
